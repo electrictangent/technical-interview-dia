@@ -21,7 +21,13 @@ def test_animal_class():
 
 def test_dog_subclass():
     dog = Dogs("Red", 12)
-    print("Object dog should return 12 for age\n  Result: {}".format(fox.age))
+    print("Object dog should return 12 for age\n  Result: {}".format(dog.age))
+
+    dogs_list = [Dogs("Red", 12), Dogs("Green", 1), Dogs("Brown", 0.5)]
+    print("Filter test: should return colour Brown only")
+    for dog in dogs_list: 
+        if dog.isBaby():
+            print(dog.colour)
 
 if __name__ == "__main__":
     test_animal_class()
