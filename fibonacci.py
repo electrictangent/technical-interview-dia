@@ -1,5 +1,4 @@
-def test_fib_func(n):
-    print(test_func(1))
+def test_fib_func():
     print(fib(0))
     print(fib(1))
     print(fib(3))
