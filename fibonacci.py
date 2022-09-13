@@ -9,7 +9,7 @@ def fib(n):
     if n == 1:
         return 1
     else:
-        return n
+        return fib(n-1) + fib(n-2)
 
 if __name__ == "__main__":
     test_fib_func()
