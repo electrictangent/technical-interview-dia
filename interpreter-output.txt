@@ -1,0 +1,130 @@
+Python 3.10.5 (main, Jul 22 2022, 17:09:35) [GCC 9.4.0] on linux Type "help", "copyright", "credits" or "license" for more information.
+>>>def test_func(n):
+        return 1
+>>>test_func(2) 
+1
+>>>def test_fib_func(n):
+    print(test_func(1))
+>>>def test_fib_func(n):
+        print(test_func(1))
+        print(fib(0))
+        print(fib(1))
+        print(fib(3))
+>>> def fib(n):
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        else:
+            return n
+>>> test_fib_func(0) 
+1 
+0 
+1 
+3
+>>>def fib(n):
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        else:
+            return fib(n-1) + fib(n-2)
+>>> test_fib_func(0) 
+1 
+0 
+1 
+2
+>>>class animals:
+        age = 1
+>>> class Dogs(animals):
+        colour = "Red"
+>>>print(Dogs.colour) 
+Red
+>>>Dogs.colour = "Green"
+>>>print(Dogs.colour) 
+Green 
+>>>Class animals:
+age = 1: File "<stdin>", line 2 age = 1: ^ SyntaxError: invalid syntax 
+>>>Class animals:
+    age = 1
+    def isBaby(age):
+        if age < 1:
+            return True
+        else:
+            return False
+>>>animals.isBaby(1) 
+False
+>>>animals.isBaby(0.5) 
+True
+>>>animals.isBaby(2) 
+False
+>>>fox = animals()
+>>>fox.age 1
+>>>fox.age = 2
+>>>fox.isBaby(fox.age) 
+Traceback (most recent call last): File "<stdin>", line 1, in <module> TypeError: animals.isBaby() takes 1 positional argument but 2 were given
+>>>fox.isBaby() 
+Traceback (most recent call last): File "<stdin>", line 1, in <module> File "<stdin>", line 4, in isBaby TypeError: '<' not supported between instances of 'animals' and 'int'
+>>>fox.isBaby 
+<bound method animals.isBaby of <__main__.animals object at 0x7fe8844b8d90>>
+>>>fox.isBaby(1) 
+Traceback (most recent call last): File "<stdin>", line 1, in <module> TypeError: animals.isBaby() takes 1 positional argument but 2 were given
+>>>class Animal():
+        def __init__(self, age):
+            self.age = age
+        def isBaby(self):
+            if self.age < 1:
+                return True
+            else:
+                return False
+>>>fox = Animal(2)
+>>>fox.age 
+2
+>>>fox.age = 3
+>>>fox.age 
+3
+>>>class Dogs(Animal):
+        def __init__(self, colour):
+            self.colour = colour
+>>>dog = Dogs("Red")
+>>>dog.isBaby() 
+Traceback (most recent call last): File "<stdin>", line 1, in <module> File "<stdin>", line 5, in isBaby AttributeError: 'Dogs' object has no attribute 'age'
+>>>class Dogs(Animal):
+        def __init__(self, colour):
+class Dogs(Animal): KeyboardInterrupt
+>>>class Dogs(Animal):
+File "<stdin>", line 2 ^ IndentationError: expected an indented block after class definition on line 1
+>>>class Dogs(Animal):
+        def __init__(self, colour, age):
+        self.colour = colour
+        Animal.__init__(self, age)
+>>>l def __init__(self, colour, age): KeyboardInterrupt
+>>>dogs = Dog("Red", 12) 
+Traceback (most recent call last): File "<stdin>", line 1, in <module> NameError: name 'Dog' is not defined. Did you mean: 'dog'?
+>>>dogs = Dosg("Red", 12) 
+Traceback (most recent call last): File "<stdin>", line 1, in <module> NameError: name 'Dosg' is not defined. Did you mean: 'dog'?
+>>>dogs = Dogs("Red", 12)
+>>>dog.colour 
+'Red'
+>>>dogs.colour 
+'Red'
+>>>dogs.age 
+12
+>>>dogs.isBaby() 
+False
+>>>dogs_list = [Dogs("Red", 12), Dogs("Green", 1), Dogs("Brown", 0.5)]
+>>>dogs_list 
+[<__main__.Dogs object at 0x7fe8844b9d20>, <__main__.Dogs object at 0x7fe8844b9cc0>, <__main__.Dogs object at 0x7fe8844b9c60>]
+>>> for dog in dogs_list: 
+        if dog.isBaby:
+            print(dog.colour)
+Red
+Green
+Brown
+>>> dog.isBaby
+<bound method Animal.isBaby of <__main__.Dogs object at 0x7fe8844b9c60>
+>>> for dog in dogs_list: 
+        if dog.isBaby():
+            print(dog.colour)
+Brown
+>>>
